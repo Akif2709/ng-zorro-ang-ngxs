@@ -1,0 +1,15 @@
+{
+  "id": "1",
+  "name": "Albert",
+  "surname": "Einstein",
+  "companyName": "Siemens",
+  "rating": 9.0,
+  "deliviries": 6,
+  "startRate": 90,
+  "dailyRate": 120,
+  "country": "Turkey",
+  "languages": ["Turkish", "English"],
+  "skills": ["angular", "react", "redux", "spring", "c++", ".net"],
+  "reviews": 15,
+  "img_url": "/assets/image.png"
+}

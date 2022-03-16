@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  font-family: Open Sans, sans-serif,Arial,Helvetica,sans-serif;
+
+}
+
+.app-layout {
+  height: 100vh;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.text-align-center {
+  align-items:baseline;
+}
+
+

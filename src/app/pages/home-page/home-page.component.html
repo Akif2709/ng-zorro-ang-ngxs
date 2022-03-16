@@ -1,0 +1,9 @@
+<ng-container *ngIf="instructors$ | async as instructors">
+    <div nz-row nzJustify="space-between">
+        <div class="d-flex">
+        <ng-container *ngFor="let item of instructors">
+                <app-card-item [instructor]="item"></app-card-item>
+            </ng-container>
+        </div>
+    </div>
+</ng-container>
