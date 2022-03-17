@@ -1,3 +1,64 @@
-<ng-container *ngIf="instructorDetails$ | async as details">
-    {{details | json}}
+<nz-header></nz-header>
+<ng-container *ngIf="instructorDetails$ | async as instructor">
+  <div class="details-container">
+    <div class="details-with-image">
+      <nz-card>
+        <nz-avatar nz-col [nzSize]="123" [nzShape]="'circle'" [nzSrc]="instructor?.img_url"> </nz-avatar>
+        <h3 nz-typography>{{ instructor.name + ' ' + instructor.surname }}</h3>
+        <span class="instructor-title">{{ instructor.title }}</span>
+        <div nz-row nzJustify="center">
+          <div class="sub-info sub-info__rating">
+            <div nz-row>
+              <i nz-icon nzType="star" nzTheme="fill"></i>
+              <span>{{ instructor.rating }}/10</span>
+            </div>
+            <span nz-typography>Rating</span>
+          </div>
+          <div class="sub-info sub-info_infodeliviries">
+            <div nz-row>
+              <span>{{ instructor.deliviries + '<' }}</span>
+            </div>
+            <span nz-typography>Deliveries</span>
+          </div>
+          <div class="sub-info sub-info_infodeliviries">
+            <div nz-row>
+              <span>$ {{ instructor.startRate }}</span>
+            </div>
+            <span nz-typography>Start Rate</span>
+          </div>
+        </div>
+        <button nz-button [nzSize]="'large'" (click)="requestQuote()">Request a Quote</button>
+      </nz-card>
+    </div>
+    <div class="about">
+      <nz-card>
+        <h3>About</h3>
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl
+          magna, et faucibus arcu condimentum sed.
+        </span>
+        <ul>
+          <li>Lorem ipsum dolor sit amet,</li>
+          <li>consectetur adipiscing elit.</li>
+          <li>Aliquam at porttitor sem.</li>
+          <li>Aliquam erat volutpat.</li>
+        </ul>
+        <span>Donec placerat nisl magna, et faucibus arcu condimentum sed.</span>
+      </nz-card>
+    </div>
+    <div class="courses">
+      <nz-card>
+        <h3>Programs / Courses</h3>
+        <span>By listing your Programs/Courses you significantly increase the chance to get invited for assignment.</span>
+      </nz-card>
+    </div>
+    <div class="keywords">
+      <nz-card>
+        <h3>Keywords</h3>
+        <div class="skills-info">
+          <div class="skills-info-badge" *ngFor="let item of instructor.skills">{{ item }}</div>
+        </div>
+      </nz-card>
+    </div>
+  </div>
 </ng-container>

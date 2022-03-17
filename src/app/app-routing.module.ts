@@ -3,21 +3,25 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DetailsPageComponent } from './pages/details-page/details-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { SendOfferFormComponent } from './pages/send-offer-form/send-offer-form.component';
 
 const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'list' },
   {
-    path:'',
-    component:AppComponent,
-    children:[
-      { path: '', pathMatch: 'full', redirectTo: '/list' },
-      { path: 'list', component:HomePageComponent },
-      { path: 'list/:id', component:DetailsPageComponent },
-    ]
-  }
+    path: 'list',
+    component: HomePageComponent,
+    children: [
+      {
+        path: 'offer/:id',
+        component: SendOfferFormComponent,
+      },
+    ],
+  },
+  { path: 'list/:id', component: DetailsPageComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

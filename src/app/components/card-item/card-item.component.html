@@ -1,60 +1,55 @@
 <div class="card-container" (click)="navigateToDetails()">
   <nz-card nzHoverable>
     <div nz-row class="avatar-container">
-      <nz-avatar nz-col [nzSize]="70" [nzShape]="'circle'" [nzSrc]="instructor?.img_url">
-      </nz-avatar>
+      <nz-avatar nz-col [nzSize]="70" [nzShape]="'circle'" [nzSrc]="instructor?.img_url"> </nz-avatar>
       <div nz-col class="name-container">
-        <span nz-typography>{{instructor.name + ' ' + instructor.surname}}</span>
+        <span nz-typography>{{ instructor.name + ' ' + instructor.surname }}</span>
         <div class="company-name">
-          <img src="../../../assets//mocks/images/Rectangle.png" alt="Rectangle">
-          <span nz-typography nzType="secondary" class="font-14">{{instructor.companyName}}</span>
+          <img src="../../../assets//mocks/images/Rectangle.png" alt="Rectangle" />
+          <span nz-typography nzType="secondary" class="font-14">{{ instructor.companyName }}</span>
         </div>
-        <div nz-row nzJustify="space-between"> 
+        <div nz-row nzJustify="space-between">
           <div class="sub-info sub-info__rating">
-            <div nz-row >
+            <div nz-row>
               <i nz-icon nzType="star" nzTheme="fill"></i>
-              <span>{{instructor.rating}}/10</span>
+              <span>{{ instructor.rating }}/10</span>
             </div>
-            <span nz-typography >Rating</span>
+            <span nz-typography>Rating</span>
           </div>
           <div class="sub-info sub-info_infodeliviries">
             <div nz-row>
-              <span>{{instructor.deliviries + '<'}}</span>
+              <span>{{ instructor.deliviries + '<' }}</span>
             </div>
-            <span nz-typography >Deliveries</span>
+            <span nz-typography>Deliveries</span>
           </div>
           <div class="sub-info sub-info_infodeliviries">
             <div nz-row>
-              <span>$  {{instructor.startRate}}</span>
+              <span>$ {{ instructor.startRate }}</span>
             </div>
-            <span nz-typography >Start Rate</span>
+            <span nz-typography>Start Rate</span>
           </div>
         </div>
       </div>
     </div>
     <div class="info-container">
       <div class="info">
-         <div nz-row>
+        <div nz-row>
           <i nz-icon nzType="environment" nzTheme="outline"></i>
-          <span>{{instructor.country}}</span>
+          <span>{{ instructor.country }}</span>
         </div>
       </div>
       <div class="info">
-         <div nz-row>
+        <div nz-row>
           <i nz-icon nzType="message" nzTheme="outline"></i>
-          <span *ngFor="let item of instructor.languages;let first = first;">
-            {{!first ? ', ' : ''}}{{item}} 
-          </span>
+          <span *ngFor="let item of instructor.languages; let first = first"> {{ !first ? ', ' : '' }}{{ item }} </span>
         </div>
       </div>
       <div class="info skills-info">
-        <div class="skills-info-badge" *ngFor="let item of instructor.skills">{{item}}</div>
+        <div class="skills-info-badge" *ngFor="let item of instructor.skills">{{ item }}</div>
       </div>
     </div>
     <div class="button-container">
-      <button nz-button [nzSize]="'large'" (click)="requestAQuote()">
-        Request a Quote
-      </button>
+      <button nz-button [nzSize]="'large'" (click)="requestAQuote($event)">Request a Quote</button>
     </div>
-    </nz-card>
+  </nz-card>
 </div>

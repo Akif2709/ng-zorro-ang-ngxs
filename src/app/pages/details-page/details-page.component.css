@@ -1,0 +1,92 @@
+.details-container {
+  padding: 3rem;
+  margin: 0 12rem;
+}
+.details-container > div {
+  margin-bottom: 1rem;
+}
+
+.details-with-image {
+  text-align: center;
+}
+
+.details-with-image nz-avatar {
+  margin-bottom: 1rem;
+}
+
+.details-with-image h3 {
+  margin-bottom: 0.5rem;
+}
+.details-with-image .instructor-title {
+  display: block;
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+div[nzJustify='center'] > div {
+  margin: 0rem 1rem;
+}
+
+.sub-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.sub-info div span {
+  margin-left: 0.2rem;
+  font-size: 14px;
+}
+.sub-info span {
+  font-size: 10px;
+  height: 13px;
+}
+.sub-info__rating {
+  color: #facc41;
+}
+
+.sub-info__rating i {
+  font-size: 14px;
+}
+.sub-info div {
+  align-items: baseline;
+}
+
+button {
+  background-color: #38b6a0;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
+  margin-top: 1.5rem;
+}
+button:hover {
+  background-color: rgb(47, 153, 135);
+  border-color: rgb(47, 153, 135);
+  color: white;
+}
+
+.about {
+  font-size: 16px;
+}
+
+.about h3 {
+  font-weight: 600;
+}
+.skills-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills-info-badge {
+  padding: 0 0.5rem;
+  border: 1px solid #b6b7cc;
+  border-radius: 20px;
+  color: black;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+nz-header {
+  height: 100px;
+}

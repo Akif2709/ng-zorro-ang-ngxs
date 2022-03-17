@@ -1,5 +1,27 @@
 .d-flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.list-container {
+  margin: 2rem 12rem;
+}
+
+@media only screen and (max-width: 1500px) {
+  /* For mobile phones: */
+  .list-container {
+    margin: 2rem 2rem;
+  }
+}
+
+nz-header {
+  height: 100px;
+  position: relative;
+}
+
+app-search-field {
+  display: block;
+  width: 30%;
+  padding-top: 30px;
 }

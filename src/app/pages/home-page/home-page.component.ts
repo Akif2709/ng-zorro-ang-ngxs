@@ -6,15 +6,19 @@ import { StoreService } from 'src/app/store/store.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
-  readonly instructors$:Observable<Instructor[]> = this.storeService.instructors$;
+  readonly instructors$: Observable<Instructor[]> = this.storeService.instructors$;
 
   constructor(private storeService: StoreService) {}
-  
+
   ngOnInit(): void {
     this.storeService.fetchInstructors();
   }
 
+  onSearch(value: string) {
+    console.log(value);
+    this.storeService.searchInstructor(value);
+  }
 }

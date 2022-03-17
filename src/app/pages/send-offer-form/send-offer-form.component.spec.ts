@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomePageComponent } from './home-page.component';
+import { SendOfferFormComponent } from './send-offer-form.component';
 
-describe('HomePageComponent', () => {
-  let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+describe('SendOfferFormComponent', () => {
+  let component: SendOfferFormComponent;
+  let fixture: ComponentFixture<SendOfferFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HomePageComponent],
+      declarations: [SendOfferFormComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(SendOfferFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

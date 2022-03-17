@@ -8,6 +8,7 @@
   "startRate": 90,
   "dailyRate": 120,
   "country": "Turkey",
+  "title": "Freelance Instructor",
   "languages": ["Turkish", "English"],
   "skills": ["angular", "react", "redux", "spring", "c++", ".net"],
   "reviews": 15,

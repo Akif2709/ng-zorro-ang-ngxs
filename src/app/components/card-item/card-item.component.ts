@@ -9,14 +9,14 @@ import { Instructor } from 'src/app/models/instructors.model';
 })
 export class CardItemComponent {
   @Input() instructor: Instructor;
-  constructor(
-    private readonly router: Router,
-    private readonly route: ActivatedRoute
-  ) {}
+  constructor(private readonly router: Router, private readonly route: ActivatedRoute) {}
 
   navigateToDetails() {
     this.router.navigate([this.instructor.id], { relativeTo: this.route });
   }
 
-  requestAQuote(){}
+  requestAQuote(event) {
+    event.stopPropagation();
+    this.router.navigate(['offer', this.instructor.id], { relativeTo: this.route });
+  }
 }

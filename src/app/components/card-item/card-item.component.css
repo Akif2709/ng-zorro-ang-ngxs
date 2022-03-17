@@ -17,8 +17,8 @@ nz-card img {
   height: 20px;
 }
 
-nz-avatar{
-    margin-top: 6px;
+nz-avatar {
+  margin-top: 6px;
 }
 .name-container {
   margin: 0.5rem 0 0 1rem;
@@ -65,49 +65,50 @@ nz-avatar{
 }
 
 .avatar-container {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .info-container .info span {
-    font-size: 12px;
-    align-items: baseline;
-    height: 16px;}
+  font-size: 12px;
+  align-items: baseline;
+  height: 16px;
+}
 
 .info-container .info i {
-    margin-right: 0.5rem;
-    padding-top: 0.1rem;
+  margin-right: 0.5rem;
+  padding-top: 0.1rem;
 }
 .info {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .skills-info-badge {
-    padding:0 0.5rem;
-    border: 1px solid #b6b7cc;
-    border-radius: 20px;
-    color:black;
-    margin-right: 0.3rem;
-    margin-bottom: 0.3rem;
+  padding: 0 0.5rem;
+  border: 1px solid #b6b7cc;
+  border-radius: 20px;
+  color: black;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 .skills-info {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 button {
-    background-color: #38b6a0;
-    text-align: center;
-    border-radius: 6px;
-    color: white;
-
+  background-color: #38b6a0;
+  text-align: center;
+  border-radius: 6px;
+  color: white;
 }
-button:hover {
-    background-color: rgb(47, 153, 135);
-    border-color: rgb(47, 153, 135);
-    color:white;
+button:hover,
+button:focus {
+  background-color: rgb(47, 153, 135);
+  border-color: rgb(47, 153, 135);
+  color: white;
 }
 
 .button-container {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }

@@ -6,12 +6,7 @@
 }
 
 * {
-  font-family: Open Sans, sans-serif,Arial,Helvetica,sans-serif;
-
-}
-
-.app-layout {
-  height: 100vh;
+  font-family: Open Sans, sans-serif, Arial, Helvetica, sans-serif;
 }
 
 .font-14 {
@@ -19,7 +14,9 @@
 }
 
 .text-align-center {
-  align-items:baseline;
+  align-items: baseline;
 }
 
-
+.app-layout {
+  min-height: 1000px;
+}

@@ -1,9 +1,17 @@
+<nz-header>
+  <app-search-field (inputValue)="onSearch($event)"></app-search-field>
+</nz-header>
 <ng-container *ngIf="instructors$ | async as instructors">
-    <div nz-row nzJustify="space-between">
+  <nz-content>
+    <div class="list-container">
+      <div nz-row nzJustify="space-between">
         <div class="d-flex">
-        <ng-container *ngFor="let item of instructors">
-                <app-card-item [instructor]="item"></app-card-item>
-            </ng-container>
+          <ng-container *ngFor="let item of instructors">
+            <app-card-item [instructor]="item"></app-card-item>
+          </ng-container>
         </div>
+      </div>
     </div>
+  </nz-content>
 </ng-container>
+<router-outlet></router-outlet>

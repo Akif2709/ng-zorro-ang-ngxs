@@ -7,6 +7,7 @@ export interface Instructor {
   deliviries: number;
   startRate: number;
   dailyRate: number;
+  title: string;
   country: string;
   languages: Array<string>;
   skills: Array<string>;
@@ -21,6 +22,7 @@ export interface InstructorDetails {
   companyName: string;
   rating: number;
   deliviries: number;
+  title: string;
   startRate: number;
   dailyRate: number;
   country: string;

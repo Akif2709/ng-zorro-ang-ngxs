@@ -9,17 +9,13 @@ import { InstructorsActions } from './actions';
   providedIn: 'root',
 })
 export class StoreService {
-  private _instructors$ = this.store.select(
-    (state) => state.instructors.instructors
-  );
-  private _instructorDetails$ = this.store.select(
-    (state) => state.instructors.instructorDetail
-  );
+  private _instructors$ = this.store.select((state) => state.instructors.instructors);
+  private _instructorDetails$ = this.store.select((state) => state.instructors.instructorDetail);
 
-  get instructors$():Observable<Array<Instructor>> {
+  get instructors$(): Observable<Array<Instructor>> {
     return this._instructors$;
   }
-  get instructorDetails$():Observable<InstructorDetails> {
+  get instructorDetails$(): Observable<InstructorDetails> {
     return this._instructorDetails$;
   }
 
@@ -29,7 +25,11 @@ export class StoreService {
     this.store.dispatch(InstructorsActions.FetchList);
   }
 
-  fetchInstructorDetails(id:string) {
+  fetchInstructorDetails(id: string) {
     this.store.dispatch(new InstructorsActions.FetchDetails(id));
+  }
+
+  searchInstructor(query: string) {
+    this.store.dispatch(new InstructorsActions.FetchWithQuery(query));
   }
 }

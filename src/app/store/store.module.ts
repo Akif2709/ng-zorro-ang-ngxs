@@ -6,8 +6,8 @@ import { InstructorsState } from './state';
 @NgModule({
   imports: [
     NgxsModule.forRoot([InstructorsState], {
-      developmentMode: !environment.production
-    })
-  ]
+      developmentMode: !environment.production,
+    }),
+  ],
 })
 export class StoreModule {}

@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 
 import { NzAffixModule } from 'ng-zorro-antd/affix';
@@ -74,6 +73,7 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
     NzAffixModule,
     NzAlertModule,
     NzAnchorModule,
+    NzDatePickerModule,
     NzAutocompleteModule,
     NzAvatarModule,
     NzBackTopModule,
@@ -86,6 +86,8 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
     NzCascaderModule,
     NzCheckboxModule,
     NzCollapseModule,
+    NzTabsModule,
+    NzTableModule,
     NzCommentModule,
     NzDatePickerModule,
     NzDescriptionsModule,
@@ -123,7 +125,6 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
     NzStepsModule,
     NzSwitchModule,
     NzTableModule,
-    NzTabsModule,
     NzTagModule,
     NzTimePickerModule,
     NzTimelineModule,
@@ -137,9 +138,7 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
     NzWaveModule,
     NzResizableModule,
     NzPipesModule,
-    NzSpaceModule
-  ]
+    NzSpaceModule,
+  ],
 })
-export class DemoNgZorroAntdModule {
-
-}
+export class DemoNgZorroAntdModule {}

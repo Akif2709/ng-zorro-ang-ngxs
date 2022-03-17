@@ -1,0 +1,149 @@
+<div class="modal-container">
+  <nz-modal
+    [(nzVisible)]="isVisible"
+    [nzMaskClosable]="false"
+    [nzContent]="modalContent"
+    [nzFooter]="null"
+    [nzWidth]="750"
+    (nzOnCancel)="handleCancel()"
+  >
+    <ng-template #modalContent>
+      <div #alertRef>
+        <nz-alert
+          *ngIf="offerRequestFailed"
+          nzType="error"
+          nzMessage="Request is failed"
+          nzDescription="Please try again"
+          nzShowIcon
+        ></nz-alert>
+      </div>
+      <form nz-form [formGroup]="form" class="login-form" (ngSubmit)="submitForm()">
+        <h2>Request Quote</h2>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please enter your request name">
+            <h4>Quote Request Name *</h4>
+            <span
+              >Please, provide a name for this quote request. This will only be visible for you and used as an identifier for any future
+              uses of this quote request.</span
+            >
+            <input nz-input formControlName="name" />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please enter your course period">
+            <h4>Course Period *</h4>
+            <span
+              >Please indicate the period in which you would like the course to take place. This will help the course provider when replying
+              to your request.</span
+            >
+            <br />
+            <nz-range-picker formControlName="coursePeriod" (ngModelChange)="onChange($event)"> </nz-range-picker>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please enter number of learners">
+            <h4>Number of Learners *</h4>
+            <span>Please indicate your expected number of learners. </span>
+            <br />
+            <nz-input-number formControlName="numberOfLearners" [nzSize]="'large'" [nzMin]="1" [nzMax]="10" [nzStep]="1"></nz-input-number>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please enter delivery format">
+            <h4>Delivery *</h4>
+            <span>In which format would you wish this course to be delivered? </span>
+            <br />
+            <nz-radio-group formControlName="deliveryFormat">
+              <label nz-radio nzValue="Virtual">Virtual (VILT)</label>
+              <label nz-radio nzValue="Classroom">Classroom (ILT)</label>
+            </nz-radio-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please enter the timezone">
+            <h4>Delivery Timezone *</h4>
+            <span
+              >Please indicate the timezone in which you wish the course to be delivered. If an agreement is reached, you will be asked to
+              provide a conferencing link to be used by your learners.
+            </span>
+            <br />
+            <nz-select formControlName="timezone" nzPlaceHolder="Select a timezone (click or type to search)">
+              <nz-option nzValue="Timezone #1" nzLabel="Timezone #1"></nz-option>
+              <nz-option nzValue="Timezone #2" nzLabel="Timezone #2"></nz-option>
+            </nz-select>
+            <br />
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please enter venue">
+            <h4>Venue Preparation *</h4>
+            <span>Who should be the resposible to take care of the course venue's logistics?</span>
+            <br />
+            <nz-radio-group formControlName="venue">
+              <label nz-radio nzValue="A">My company will prepare and organize the venue to host this course</label>
+              <label nz-radio nzValue="B">I expect the course supplier to prepare and organize the venue for this course</label>
+            </nz-radio-group>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please enter language">
+            <h4>Delivery Language *</h4>
+            <span
+              >Please select the language in which you wish this course to be delivered. Please note that this option has no effect over the
+              course materials language.</span
+            >
+            <br />
+            <nz-select formControlName="language" nzPlaceHolder="Select a language">
+              <nz-option nzValue="Language #1" nzLabel="Language #1"></nz-option>
+              <nz-option nzValue="Language #2" nzLabel="Language #2"></nz-option>
+            </nz-select>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <h4>T&E Budget Optional</h4>
+            <span
+              >Provide an estimation of how much you are willing to pay for this course's Travel & Expenses costs. Please take into account
+              the delivery location and the expected dates for the course.</span
+            >
+            <br />
+            <nz-input-group nzPrefix="$">
+              <input type="text" nz-input formControlName="budgetEstimation" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please enter payment criteria">
+            <h4>T&E Payment Criteria *</h4>
+            <span>How do you wish to settle the Travel and Expenses payment?</span>
+            <br />
+            <nz-radio-group formControlName="paymentCriteria">
+              <label nz-radio nzValue="A">Fixed</label>
+              <label nz-radio nzValue="B">Actuals</label>
+            </nz-radio-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <h4>Comments</h4>
+            <span>Use this field if you wish to provide more information about your request.</span>
+            <br />
+            <textarea nz-input placeholder="Controlled autosize" [nzAutosize]="{ minRows: 5 }" formControlName="comment"></textarea>
+          </nz-form-control>
+        </nz-form-item>
+
+        <div class="button-container">
+          <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
+          <button nz-button nzType="primary" type="submit" [nzLoading]="isConfirmLoading">Submit</button>
+        </div>
+      </form>
+    </ng-template>
+  </nz-modal>
+</div>
