@@ -21,6 +21,6 @@ export class DetailsPageComponent implements OnInit {
   }
 
   requestQuote(id: string): void {
-    this.router.navigate(['form', { id }], { relativeTo: this.route });
+    this.router.navigate(['form', { id }], { relativeTo: this.route, replaceUrl: true });
   }
 }

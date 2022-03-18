@@ -38,7 +38,7 @@ export class SendOfferFormComponent implements OnInit, OnDestroy {
   }
 
   handleCancel(): void {
-    this.router.navigate(['../'], { relativeTo: this.route });
+    this.router.navigate(['../'], { relativeTo: this.route, replaceUrl: true });
   }
 
   submitForm() {
@@ -75,7 +75,7 @@ export class SendOfferFormComponent implements OnInit, OnDestroy {
   }
 
   private handleSuccess() {
-    this.router.navigate(['list']);
+    this.router.navigate(['../'], { relativeTo: this.route, replaceUrl: true });
     this.offerRequestFailed = false;
     this.isConfirmLoading = false;
     this.notification.create('success', 'Request is successfully posted', `Request name: ${this.form.value.name}`);
