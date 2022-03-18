@@ -17,7 +17,16 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'list/:id', component: DetailsPageComponent },
+  {
+    path: 'list/:id',
+    component: DetailsPageComponent,
+    children: [
+      {
+        path: 'offer',
+        component: SendOfferFormComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({

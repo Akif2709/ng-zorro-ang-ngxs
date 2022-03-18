@@ -27,15 +27,15 @@
             <span nz-typography>Start Rate</span>
           </div>
         </div>
-        <button nz-button [nzSize]="'large'" (click)="requestQuote()">Request a Quote</button>
+        <button nz-button [nzSize]="'large'" (click)="requestQuote(instructor.id)">Request a Quote</button>
       </nz-card>
     </div>
     <div class="about">
       <nz-card>
         <h3>About</h3>
         <span>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl
-          magna, et faucibus arcu condimentum sed.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu
+          condimentum sed.
         </span>
         <ul>
           <li>Lorem ipsum dolor sit amet,</li>
@@ -56,9 +56,10 @@
       <nz-card>
         <h3>Keywords</h3>
         <div class="skills-info">
-          <div class="skills-info-badge" *ngFor="let item of instructor.skills">{{ item }}</div>
+          <div class="skills-info__badge" *ngFor="let item of instructor.skills">{{ item }}</div>
         </div>
       </nz-card>
     </div>
   </div>
 </ng-container>
+<router-outlet></router-outlet>

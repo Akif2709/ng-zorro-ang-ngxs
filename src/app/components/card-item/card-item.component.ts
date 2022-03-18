@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Instructor } from 'src/app/models/instructors.model';
 
@@ -9,14 +9,14 @@ import { Instructor } from 'src/app/models/instructors.model';
 })
 export class CardItemComponent {
   @Input() instructor: Instructor;
-  constructor(private readonly router: Router, private readonly route: ActivatedRoute) {}
+  @Output() onClick = new EventEmitter();
+  @Output() onSendOfferClick = new EventEmitter();
 
-  navigateToDetails() {
-    this.router.navigate([this.instructor.id], { relativeTo: this.route });
+  onItemClick() {
+    this.onClick.emit(this.instructor.id);
   }
 
-  requestAQuote(event) {
-    event.stopPropagation();
-    this.router.navigate(['offer', this.instructor.id], { relativeTo: this.route });
+  requestAQuote() {
+    this.onSendOfferClick.emit(this.instructor.id);
   }
 }

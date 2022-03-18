@@ -27,9 +27,7 @@ export class InstructorsState {
    */
   @Action(InstructorsActions.FetchDetails)
   fetchDetails(ctx: StateContext<InstructorsStateModel>, action: InstructorsActions.FetchDetails) {
-    return this.instructorsHttpService
-      .getInstructorDetails(action.id)
-      .pipe(tap((instructorDetail) => ctx.patchState({ instructorDetail })));
+    return this.instructorsHttpService.getInstructorDetails(action.id).pipe(tap((instructorDetail) => ctx.patchState({ instructorDetail })));
   }
   /**
    * Reducer for searching items with query

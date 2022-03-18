@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import INSTRUCTORS from '../../assets/mocks/list.json';
-import INSTRUCTOR_DETAILS from '../../assets/mocks/details.json';
+import { Observable } from 'rxjs';
 import { Instructor, InstructorDetails } from '../models/instructors.model';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { catchError, filter, map, switchMap } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +27,7 @@ export class InstructorsHttpService {
 
   getInstructorDetails(id: string): Observable<InstructorDetails> {
     return this.httpClient.get<InstructorDetails>('../../assets/mocks/details.json').pipe(
-      // In orer to return more realistic data, i find out the item with id and return it
+      // In order to return more realistic data, this logic filters the item with id and return it
       switchMap(() => {
         return this.getInstructors().pipe(
           map((items) => {

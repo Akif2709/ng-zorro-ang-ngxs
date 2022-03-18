@@ -1,4 +1,4 @@
-<div class="card-container" (click)="navigateToDetails()">
+<div class="card-container" (click)="onItemClick()">
   <nz-card nzHoverable>
     <div nz-row class="avatar-container">
       <nz-avatar nz-col [nzSize]="70" [nzShape]="'circle'" [nzSrc]="instructor?.img_url"> </nz-avatar>
@@ -49,7 +49,7 @@
       </div>
     </div>
     <div class="button-container">
-      <button nz-button [nzSize]="'large'" (click)="requestAQuote($event)">Request a Quote</button>
+      <button nz-button [nzSize]="'large'" (click)="requestAQuote(); $event.stopPropagation()">Request a Quote</button>
     </div>
   </nz-card>
 </div>

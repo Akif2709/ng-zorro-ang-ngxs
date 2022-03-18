@@ -1,21 +1,10 @@
+<router-outlet></router-outlet>
+
 <div class="modal-container">
-  <nz-modal
-    [(nzVisible)]="isVisible"
-    [nzMaskClosable]="false"
-    [nzContent]="modalContent"
-    [nzFooter]="null"
-    [nzWidth]="750"
-    (nzOnCancel)="handleCancel()"
-  >
+  <nz-modal [(nzVisible)]="isVisible" [nzMaskClosable]="false" [nzContent]="modalContent" [nzFooter]="null" [nzWidth]="750" (nzOnCancel)="handleCancel()">
     <ng-template #modalContent>
       <div #alertRef>
-        <nz-alert
-          *ngIf="offerRequestFailed"
-          nzType="error"
-          nzMessage="Something went wrong"
-          nzDescription="Please try again"
-          nzShowIcon
-        ></nz-alert>
+        <nz-alert *ngIf="offerRequestFailed" nzType="error" nzMessage="Something went wrong" nzDescription="Please try again" nzShowIcon></nz-alert>
       </div>
       <form nz-form [formGroup]="form" class="login-form" (ngSubmit)="submitForm()">
         <h2>Request Quote</h2>
@@ -24,8 +13,8 @@
           <nz-form-control nzErrorTip="Please enter your request name">
             <h4>Quote Request Name *</h4>
             <span
-              >Please, provide a name for this quote request. This will only be visible for you and used as an identifier for any future
-              uses of this quote request.</span
+              >Please, provide a name for this quote request. This will only be visible for you and used as an identifier for any future uses of this quote
+              request.</span
             >
             <input nz-input formControlName="name" />
           </nz-form-control>
@@ -35,8 +24,8 @@
           <nz-form-control nzErrorTip="Please enter your course period">
             <h4>Course Period *</h4>
             <span
-              >Please indicate the period in which you would like the course to take place. This will help the course provider when replying
-              to your request.</span
+              >Please indicate the period in which you would like the course to take place. This will help the course provider when replying to your
+              request.</span
             >
             <br />
             <nz-range-picker formControlName="coursePeriod" (ngModelChange)="onChange($event)"> </nz-range-picker>
@@ -68,8 +57,8 @@
           <nz-form-control nzErrorTip="Please enter the timezone">
             <h4>Delivery Timezone *</h4>
             <span
-              >Please indicate the timezone in which you wish the course to be delivered. If an agreement is reached, you will be asked to
-              provide a conferencing link to be used by your learners.
+              >Please indicate the timezone in which you wish the course to be delivered. If an agreement is reached, you will be asked to provide a
+              conferencing link to be used by your learners.
             </span>
             <br />
             <nz-select formControlName="timezone" nzPlaceHolder="Select a timezone (click or type to search)">
@@ -96,8 +85,8 @@
           <nz-form-control nzErrorTip="Please enter language">
             <h4>Delivery Language *</h4>
             <span
-              >Please select the language in which you wish this course to be delivered. Please note that this option has no effect over the
-              course materials language.</span
+              >Please select the language in which you wish this course to be delivered. Please note that this option has no effect over the course materials
+              language.</span
             >
             <br />
             <nz-select formControlName="language" nzPlaceHolder="Select a language">
@@ -110,8 +99,8 @@
           <nz-form-control>
             <h4>T&E Budget Optional</h4>
             <span
-              >Provide an estimation of how much you are willing to pay for this course's Travel & Expenses costs. Please take into account
-              the delivery location and the expected dates for the course.</span
+              >Provide an estimation of how much you are willing to pay for this course's Travel & Expenses costs. Please take into account the delivery
+              location and the expected dates for the course.</span
             >
             <br />
             <nz-input-group nzPrefix="$">

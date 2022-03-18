@@ -24,7 +24,7 @@ export class SendOfferFormComponent implements OnInit, OnDestroy {
     private readonly instructorsHttpService: InstructorsHttpService,
     private notification: NzNotificationService,
     private readonly router: Router,
-    private readonly route:ActivatedRoute
+    private readonly route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class SendOfferFormComponent implements OnInit, OnDestroy {
   }
 
   handleCancel(): void {
-    this.router.navigate(['list']);
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 
   submitForm() {
@@ -58,7 +58,7 @@ export class SendOfferFormComponent implements OnInit, OnDestroy {
     }
   }
 
-  private createForm(id:string) {
+  private createForm(id: string) {
     this.form = this.fb.group({
       id: new FormControl(id, [Validators.required]),
       name: new FormControl('', [Validators.required]),
@@ -80,6 +80,7 @@ export class SendOfferFormComponent implements OnInit, OnDestroy {
     this.isConfirmLoading = false;
     this.notification.create('success', 'Request is successfully posted', `Request name: ${this.form.value.name}`);
   }
+
   private handleError() {
     this.isConfirmLoading = false;
     this.offerRequestFailed = true;

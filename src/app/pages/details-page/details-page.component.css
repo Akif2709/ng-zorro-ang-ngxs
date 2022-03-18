@@ -9,7 +9,6 @@
 .details-with-image {
   text-align: center;
 }
-
 .details-with-image nz-avatar {
   margin-bottom: 1rem;
 }
@@ -22,18 +21,15 @@
   margin-bottom: 1rem;
   color: rgba(0, 0, 0, 0.45);
 }
-
 div[nzJustify='center'] > div {
   margin: 0rem 1rem;
 }
-
 .sub-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-right: 1rem;
 }
-
 .sub-info div span {
   margin-left: 0.2rem;
   font-size: 14px;
@@ -52,7 +48,6 @@ div[nzJustify='center'] > div {
 .sub-info div {
   align-items: baseline;
 }
-
 button {
   background-color: #38b6a0;
   text-align: center;
@@ -65,11 +60,9 @@ button:hover {
   border-color: rgb(47, 153, 135);
   color: white;
 }
-
 .about {
   font-size: 16px;
 }
-
 .about h3 {
   font-weight: 600;
 }
@@ -77,8 +70,7 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
 }
-
-.skills-info-badge {
+.skills-info__badge {
   padding: 0 0.5rem;
   border: 1px solid #b6b7cc;
   border-radius: 20px;

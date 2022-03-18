@@ -33,10 +33,10 @@ export interface InstructorDetails {
 }
 
 export enum SortingKinds {
-  AlphabeticalASC ='Alphabetical ASC',
-  AlphabeticalDESC ='Alphabetical DESC',
-  StartRateASC ='StartRate ASC',
-  StartRateDESC ='StartRate DESC',
-  RatingASC ='Rating ASC',
-  RatingDESC ='Rating DESC',
+  AlphabeticalASC = 'Alphabetical ASC',
+  AlphabeticalDESC = 'Alphabetical DESC',
+  StartRateASC = 'StartRate ASC',
+  StartRateDESC = 'StartRate DESC',
+  RatingASC = 'Rating ASC',
+  RatingDESC = 'Rating DESC',
 }
