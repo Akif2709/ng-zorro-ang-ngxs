@@ -1,1 +1,15 @@
-<input nz-input placeholder="Search instructor" [formControl]="searchInputControl" />
+<div nz-row [nzGutter]="16">
+    <div nz-col class="gutter-row" [nzSpan]="12">
+        <input nz-input placeholder="Search instructor" [formControl]="searchInputControl" />
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="6">
+        <nz-select [formControl]="sortingInputControl" nzPlaceHolder="Select an order">
+            <nz-option [nzValue]="sortingKinds.AlphabeticalASC" [nzLabel]="sortingKinds.AlphabeticalASC"></nz-option>
+            <nz-option [nzValue]="sortingKinds.AlphabeticalDESC" [nzLabel]="sortingKinds.AlphabeticalDESC"></nz-option>
+            <nz-option [nzValue]="sortingKinds.StartRateASC" [nzLabel]="sortingKinds.StartRateASC"></nz-option>
+            <nz-option [nzValue]="sortingKinds.StartRateDESC" [nzLabel]="sortingKinds.StartRateDESC"></nz-option>
+            <nz-option [nzValue]="sortingKinds.RatingASC" [nzLabel]="sortingKinds.RatingASC"></nz-option>
+            <nz-option [nzValue]="sortingKinds.RatingDESC" [nzLabel]="sortingKinds.RatingDESC"></nz-option>
+        </nz-select>
+    </div>
+</div>

@@ -31,3 +31,12 @@ export interface InstructorDetails {
   reviews: number;
   img_url: string;
 }
+
+export enum SortingKinds {
+  AlphabeticalASC ='Alphabetical ASC',
+  AlphabeticalDESC ='Alphabetical DESC',
+  StartRateASC ='StartRate ASC',
+  StartRateDESC ='StartRate DESC',
+  RatingASC ='Rating ASC',
+  RatingDESC ='Rating DESC',
+}
