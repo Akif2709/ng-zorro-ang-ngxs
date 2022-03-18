@@ -28,8 +28,7 @@ export class HomePageComponent implements OnInit {
   }
 
   navigateToFormModal(id: string): void {
-    console.log(id);
-    this.router.navigate(['offer', id], { relativeTo: this.route });
+    this.router.navigate(['form', { id }], { relativeTo: this.route });
   }
 
   onSorting(value: SortingKinds): void {

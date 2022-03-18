@@ -12,7 +12,7 @@ const routes: Routes = [
     component: HomePageComponent,
     children: [
       {
-        path: 'offer/:id',
+        path: 'form',
         component: SendOfferFormComponent,
       },
     ],
@@ -22,7 +22,7 @@ const routes: Routes = [
     component: DetailsPageComponent,
     children: [
       {
-        path: 'offer',
+        path: 'form',
         component: SendOfferFormComponent,
       },
     ],
